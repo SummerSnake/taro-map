@@ -32,7 +32,7 @@ export default class Index extends Component {
     // 实例化API核心类
     const QQMapSDK = new QQMapWX({
       key: 'S32BZ-TYNL4-JDVUZ-XMLOV-DIIHS-WBF4J',
-      mapStyleId: 'style1',
+      mapStyleId: 'style1', // 个性化地图
     });
     this.setState({
       QQMapSDK,
