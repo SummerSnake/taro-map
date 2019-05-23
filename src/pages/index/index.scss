@@ -1,0 +1,51 @@
+@import '../../styles/mixin';
+
+.homeWrap {
+  @include wh(100vw, 100vh);
+  position: relative;
+  .searchDom {
+    @include wh(100%, 92px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-top: 2px solid #ccc;
+    .inputDom {
+      @include sc(28px, #666);
+      padding: 0 20px;
+      background-color: #f8f8f8;
+      border-radius: 24px;
+    }
+  }
+  .mapDom {
+    position: absolute;
+    top: 92px;
+    left: 0;
+    @include wh(100vw, 450px);
+    .coverImgWrap {
+      @include wh(48px, 48px);
+    }
+  }
+  .scrollDom {
+    position: absolute;
+    top: 542px;
+    left: 0;
+    height: calc(100vh - 542px);
+    overflow: auto;
+    .nearbyBuilding {
+      padding: 20px;
+      margin: 12px 0;
+      background-color: #fff;
+      .nearbyTitle {
+        @include sc(28px, #333);
+        padding-bottom: 20px;
+      }
+      .nearbyAddr {
+        @include sc(24px, #999);
+      }
+    }
+  }
+}
