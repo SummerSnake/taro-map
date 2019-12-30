@@ -4,19 +4,19 @@ import QQMapWX from '../../assets/qqmap-wx-jssdk.min.js';
 import imgUrl from '../../assets/location.png';
 import './index.scss';
 
-export default class Index extends Component {
+class Index extends Component {
   constructor() {
     super(...arguments);
     this.state = {
-      latitude: 35.970538, // 纬度
-      longitude: 120.259514, // 经度
+      latitude: 35.956471, // 纬度
+      longitude: 120.217853, // 经度
       markers: [
         {
           // 标记点
           iconPath: imgUrl,
           id: 0, // 标记点 id marker 点击事件回调会返回此 id。建议为每个 marker 设置上 number 类型 id，保证更新 marker 时有更好的性能。
-          latitude: 35.970538, // 纬度
-          longitude: 120.259514, // 经度
+          latitude: 35.956471, // 纬度
+          longitude: 120.217853, // 经度
           width: 16, // 标注图标高度
           height: 16, // 标注图标宽度
         },
@@ -129,6 +129,7 @@ export default class Index extends Component {
   handleRegionChange = e => {
     console.log(e);
   };
+
   render() {
     return (
       <View className="homeWrap">
@@ -181,3 +182,5 @@ export default class Index extends Component {
     );
   }
 }
+
+export default Index;
