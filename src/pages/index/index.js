@@ -100,8 +100,8 @@ class Index extends Component {
 
   /**
    * @desc 列表项点击事件
-   * @param latitude 纬度
-   * @param longitude 经度
+   * @param { number } latitude 纬度
+   * @param { number } longitude 经度
    */
   handleNearbyClick = (latitude, longitude) => {
     // 设置当前位置
