@@ -45,7 +45,7 @@ class Index extends Component {
         QQMapSDK.search({
           keyword: that.state.searchVal,
           boundary: `nearBy(${res.latitude},${res.longitude},1000)`,
-          success: function(searchRes) {
+          success: searchRes => {
             that.setState({
               nearbyBuilding: searchRes.data,
             });
@@ -74,8 +74,8 @@ class Index extends Component {
   };
 
   /**
-   * 搜索框
-   * @param e
+   * @desc 搜索框事件
+   * @param { object } e
    */
   handleSearchValChange = e => {
     const that = this;
@@ -99,7 +99,9 @@ class Index extends Component {
   };
 
   /**
-   * 列表项点击事件
+   * @desc 列表项点击事件
+   * @param latitude 纬度
+   * @param longitude 经度
    */
   handleNearbyClick = (latitude, longitude) => {
     // 设置当前位置
@@ -117,14 +119,16 @@ class Index extends Component {
   };
 
   /**
-   * marker 点击事件
+   * @desc marker 点击事件
+   * @param { object } e
    */
   handleMarkerClick = e => {
     console.log(e);
   };
 
   /**
-   * 视野发生变化触发事件
+   * @desc 视野发生变化触发事件
+   * @param { object } e
    */
   handleRegionChange = e => {
     console.log(e);

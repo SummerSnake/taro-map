@@ -1,7 +1,7 @@
 {
   "miniprogramRoot": "dist/",
-  "projectname": "taro_mini",
-  "description": "微信小程序商城",
+  "projectname": "taro_map",
+  "description": "taro集成腾讯地图",
   "appid": "wx33bea6a8be451c65",
   "setting": {
     "urlCheck": false,

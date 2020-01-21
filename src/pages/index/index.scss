@@ -1,10 +1,10 @@
 @import '../../styles/mixin';
 
 .homeWrap {
-  @include wh(100vw, 100vh);
+  @include wmh(100vw, 100vh);
   position: relative;
   .searchDom {
-    @include wh(100%, 92px);
+    width: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -15,6 +15,8 @@
     border-top: 2px solid #ccc;
     .inputDom {
       @include sc(28px, #666);
+      height: 80px;
+      line-height: 80px;
       padding: 0 20px;
       background-color: #f8f8f8;
       border-radius: 24px;
@@ -22,7 +24,7 @@
   }
   .mapDom {
     position: absolute;
-    top: 92px;
+    top: 100px;
     left: 0;
     @include wh(100vw, 450px);
     .coverImgWrap {
@@ -31,7 +33,7 @@
   }
   .scrollDom {
     position: absolute;
-    top: 542px;
+    top: 550px;
     left: 0;
     height: calc(100vh - 542px);
     overflow: auto;
