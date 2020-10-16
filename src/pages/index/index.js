@@ -1,4 +1,5 @@
-import Taro, { Component } from '@tarojs/taro';
+import Taro from '@tarojs/taro';
+import React, { Component } from 'react';
 import { View, Input, Map, CoverView, ScrollView } from '@tarojs/components';
 import QQMapWX from '../../assets/qqmap-wx-jssdk.min.js';
 import imgUrl from '../../assets/location.png';
@@ -40,17 +41,17 @@ class Index extends Component {
     const that = this;
     Taro.getLocation({
       type: 'wgs84',
-      success: function(res) {
+      success: function (res) {
         // 获取周边建筑信息
         QQMapSDK.search({
           keyword: that.state.searchVal,
           boundary: `nearBy(${res.latitude},${res.longitude},1000)`,
-          success: searchRes => {
+          success: (searchRes) => {
             that.setState({
               nearbyBuilding: searchRes.data,
             });
           },
-          fail: function(searchRes) {
+          fail: function (searchRes) {
             console.log(searchRes);
           },
           // complete: function(searchRes) {
@@ -77,16 +78,16 @@ class Index extends Component {
    * @desc 搜索框事件
    * @param { object } e
    */
-  handleSearchValChange = e => {
+  handleSearchValChange = (e) => {
     const that = this;
     this.state.QQMapSDK.search({
       keyword: e.detail.value,
-      success: function(searchRes) {
+      success: function (searchRes) {
         that.setState({
           nearbyBuilding: searchRes.data,
         });
       },
-      fail: function(searchRes) {
+      fail: function (searchRes) {
         console.log(searchRes);
       },
       // complete: function(searchRes) {
@@ -122,7 +123,7 @@ class Index extends Component {
    * @desc marker 点击事件
    * @param { object } e
    */
-  handleMarkerClick = e => {
+  handleMarkerClick = (e) => {
     console.log(e);
   };
 
@@ -130,7 +131,7 @@ class Index extends Component {
    * @desc 视野发生变化触发事件
    * @param { object } e
    */
-  handleRegionChange = e => {
+  handleRegionChange = (e) => {
     console.log(e);
   };
 
@@ -171,7 +172,7 @@ class Index extends Component {
         </Map>
 
         <ScrollView className="scrollDom" scrollY scrollWithAnimation lowerThreshold="50">
-          {this.state.nearbyBuilding.map(item => (
+          {this.state.nearbyBuilding.map((item) => (
             <View
               key={item.id}
               className="nearbyBuilding"
