@@ -1,23 +1,23 @@
 import Taro from '@tarojs/taro';
 import React, { Component } from 'react';
-import { View, Input, Map, CoverView, ScrollView } from '@tarojs/components';
+import { View, Input, Map, ScrollView } from '@tarojs/components';
 import QQMapWX from '../../assets/qqmap-wx-jssdk.min.js';
 import imgUrl from '../../assets/location.png';
 import './index.scss';
 
 class Index extends Component {
-  constructor() {
-    super(...arguments);
+  constructor(props) {
+    super(props);
     this.state = {
-      latitude: 35.956471, // 纬度
-      longitude: 120.217853, // 经度
+      latitude: 35.95234, // 纬度
+      longitude: 120.239013, // 经度
       markers: [
         {
           // 标记点
           iconPath: imgUrl,
           id: 0, // 标记点 id marker 点击事件回调会返回此 id。建议为每个 marker 设置上 number 类型 id，保证更新 marker 时有更好的性能。
-          latitude: 35.956471, // 纬度
-          longitude: 120.217853, // 经度
+          latitude: 35.95234, // 纬度
+          longitude: 120.239013, // 经度
           width: 16, // 标注图标高度
           height: 16, // 标注图标宽度
         },
@@ -134,7 +134,6 @@ class Index extends Component {
   handleRegionChange = (e) => {
     console.log(e);
   };
-
   render() {
     return (
       <View className="homeWrap">
@@ -165,11 +164,7 @@ class Index extends Component {
           onMarkertap={this.handleMarkerClick.bind(this)}
           onRegionchange={this.handleRegionChange.bind(this)}
           showLocation
-        >
-          <CoverView className="coverImgWrap">
-            {/*<CoverImage src={imgUrl} className="coverImg" />*/}
-          </CoverView>
-        </Map>
+        />
 
         <ScrollView className="scrollDom" scrollY scrollWithAnimation lowerThreshold="50">
           {this.state.nearbyBuilding.map((item) => (

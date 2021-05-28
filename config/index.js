@@ -9,7 +9,7 @@ const config = {
   },
   sourceRoot: 'src',
   outputRoot: 'dist',
-  plugins: ['@tarojs/plugin-sass'],
+  plugins: [],
   defineConstants: {},
   copy: {
     patterns: [],
